@@ -11,9 +11,6 @@ let csso = require("gulp-csso");
 let server = require("browser-sync").create();
 let imagemin = require("gulp-imagemin");
 let webp = require("gulp-webp");
-let svgstore = require("gulp-svgstore");
-let posthtml = require("gulp-posthtml");
-let include = require("posthtml-include");
 let del = require("del");
 
 gulp.task("css", () => {
@@ -45,13 +42,12 @@ gulp.task("server", () => {
 
     gulp.watch("source/sass/**/*.scss", gulp.series("css"));
     gulp.watch("source/js/*.js", gulp.series("copy", "refresh"));
-    gulp.watch(("source/img/icon-*.svg"), gulp.series("sprite", "html", "refresh"));
-    gulp.watch(("source/*.html"), gulp.series("html", "refresh"));
+    gulp.watch(("source/*.html"), gulp.series("copy", "refresh"));
 });
 
 
 gulp.task("images", () => {
-    return gulp.src("source/img/**/*.{jpg,svg}")
+    return gulp.src("source/img/**/*.{png,svg}")
         .pipe(imagemin([
             imagemin.jpegtran({progressive: true}),
             imagemin.svgo()
@@ -65,29 +61,13 @@ gulp.task("webp", () => {
         .pipe(gulp.dest("source/img"));
 });
 
-gulp.task("sprite", () => {
-    return gulp.src("source/img/**/icon-*.svg")
-        .pipe(svgstore({
-            inlineSvg: true
-        }))
-        .pipe(rename("sprite.svg"))
-        .pipe(gulp.dest("build/img"));
-});
-
-gulp.task("html", () => {
-    return gulp.src("source/*.html")
-        .pipe(posthtml([
-            include()
-        ]))
-        .pipe(gulp.dest("build"));
-});
-
 gulp.task("copy", () => {
     return gulp.src([
-        "source/fonts/**/*.{ttf,otf}",
+        "source/fonts/**/*.{woff,woff2}",
         "source/img/**",
         "source/js/*.js",
-        "source/css/*.css"
+        "source/css/*.css",
+        "source/*.html"
     ], {
         base: "source"
     })
@@ -101,9 +81,7 @@ gulp.task("clean", () => {
 gulp.task("build", gulp.series(
     "clean",
     "copy",
-    "css",
-    "sprite",
-    "html"
+    "css"
 ));
 
 gulp.task("refresh", (done) => {
@@ -115,7 +93,5 @@ gulp.task("start", gulp.series(
     "clean",
     "copy",
     "css",
-    "sprite",
-    "html",
     "server"
 ));
