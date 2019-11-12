@@ -12,6 +12,8 @@ let server = require("browser-sync").create();
 let imagemin = require("gulp-imagemin");
 let webp = require("gulp-webp");
 let del = require("del");
+let pug = require("gulp-pug");
+let htmlmin = require("gulp-htmlmin");
 
 gulp.task("css", () => {
     return gulp.src("source/sass/style.scss")
@@ -31,6 +33,13 @@ gulp.task("css", () => {
         .pipe(server.stream());
 });
 
+gulp.task("html", () => {
+  return gulp.src("source/*.pug")
+    .pipe(pug())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"))
+});
+
 gulp.task("server", () => {
     server.init({
         server: "build/",
@@ -42,7 +51,7 @@ gulp.task("server", () => {
 
     gulp.watch("source/sass/**/*.scss", gulp.series("css"));
     gulp.watch("source/js/*.js", gulp.series("copy", "refresh"));
-    gulp.watch(("source/*.html"), gulp.series("copy", "refresh"));
+    gulp.watch("source/**/*.pug", gulp.series("html", "refresh"));
 });
 
 
@@ -56,7 +65,7 @@ gulp.task("images", () => {
 });
 
 gulp.task("webp", () => {
-    return gulp.src("source/img/**/*.{jpg,png}")
+    return gulp.src("source/img/**/*.{png}")
         .pipe(webp({quality: 90}))
         .pipe(gulp.dest("source/img"));
 });
@@ -67,7 +76,9 @@ gulp.task("copy", () => {
         "source/img/**",
         "source/js/*.js",
         "source/css/*.css",
-        "source/*.html"
+        "source/*.html",
+        "source/**/*.png",
+        "source/manifest.json"
     ], {
         base: "source"
     })
