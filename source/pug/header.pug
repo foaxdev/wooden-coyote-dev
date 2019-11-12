@@ -1,2 +1,12 @@
 mixin header()
   header.header
+    a.header__logo(href='/')
+      picture
+        source(type='image/webp', srcset='img/logo.webp')
+        img.header__logo(src='img/logo.png', alt='Logotype Wooden Coyote music')
+      span.header__title Wooden Coyote music
+    - let menu = { 'about-me': 'About me', 'lister': 'Listen', 'download': 'Download', 'contacts': 'Contacts', 'donate': 'Donate' };
+    ul.menu-list
+      each menuName, menuId in menu
+        li.menu-list__item= menuName
+          a.menu-list__link(href='#' + menuId)

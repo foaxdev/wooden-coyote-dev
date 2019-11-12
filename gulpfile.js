@@ -56,16 +56,15 @@ gulp.task("server", () => {
 
 
 gulp.task("images", () => {
-    return gulp.src("source/img/**/*.{png,svg}")
+    return gulp.src("source/img/**/*.{svg}")
         .pipe(imagemin([
-            imagemin.jpegtran({progressive: true}),
             imagemin.svgo()
         ]))
         .pipe(gulp.dest("source/img"));
 });
 
 gulp.task("webp", () => {
-    return gulp.src("source/img/**/*.{png}")
+    return gulp.src("source/img/*.png")
         .pipe(webp({quality: 90}))
         .pipe(gulp.dest("source/img"));
 });

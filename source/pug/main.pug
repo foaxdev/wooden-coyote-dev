@@ -1,2 +1,36 @@
 mixin main()
   main
+    h1.visually-hidden Wooden Coyote Free Music
+    section.about-me
+      div.about-me__wrap
+        h2.heading.about-me__header
+        div.about-me__info-wrap
+          picture
+            source(type='image/webp', srcset='img/logo.webp')
+            img.about-me__picture(src='img/logo.png', alt='Logotype Wooden Coyote music')
+          p.about-me__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          p.about-me__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          span.about-me__country Fryazino, Russia
+
+    section.listen
+      div.listen__wrap
+        h2.heading.listen__header My music
+        ul.playlists-list
+          li.playlists-list__item
+            iframe.playlists-list__iframe(scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/719659770&color=%23ff9900&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+          li.playlists-list__item
+            iframe.playlists-list__iframe(scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/667205940&color=%23ff9900&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+          li.playlists-list__item
+            iframe.playlists-list__iframe(scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/842603069&color=%23ff9900&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+          li.playlists-list__item
+            iframe.playlists-list__iframe(scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/781530504&color=%23ff9900&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+
+    section.download
+      div.download__wrap
+        h2.heading.download__header Free bundles for download
+        ul.download-list
+          li.download-list__item
+            picture
+              source(type='image/webp', srcset='img/electronic-bundle-cover.webp')
+              img.about-me__picture(src='img/electronic-bundle-cover.png', alt='Electronic bundle cover')
+
