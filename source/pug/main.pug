@@ -1,7 +1,7 @@
 mixin main()
   main
     h1.visually-hidden Wooden Coyote Free Music
-    section.about-me
+    section.about-me(id='about-me')
       div.about-me__wrap
         h2.heading.about-me__header
         div.about-me__info-wrap
@@ -12,7 +12,7 @@ mixin main()
           p.about-me__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
           span.about-me__country Fryazino, Russia
 
-    section.listen
+    section.listen(id='listen')
       div.listen__wrap
         h2.heading.listen__header My music
         ul.playlists-list
@@ -25,7 +25,7 @@ mixin main()
           li.playlists-list__item
             iframe.playlists-list__iframe(scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/781530504&color=%23ff9900&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
 
-    section.download
+    section.download(id='download')
       div.download__wrap
         h2.heading.download__header Free bundles for download
         ul.download-list
