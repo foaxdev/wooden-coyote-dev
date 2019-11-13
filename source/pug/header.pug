@@ -2,8 +2,11 @@ mixin header()
   header.header
     a.header__logo(href='/')
       picture
-        source(type='image/webp', srcset='img/logo.webp')
-        img.header__logo(src='img/logo.png', alt='Logotype Wooden Coyote music')
+        source(type='image/webp' media='(min-width: 1200px)' srcset='img/logo-small-desktop.webp')
+        source(type='image/webp' srcset='img/logo-small-mobile.webp')
+
+        source(media='(min-width: 1200px)' srcset='img/logo-small-desktop.png')
+        img.header__logo(src='img/logo-small-mobile.png' alt='Logotype Wooden Coyote music')
       span.header__title Wooden Coyote music
     - let menu = { 'about-me': 'About me', 'lister': 'Listen', 'download': 'Download', 'contacts': 'Contacts' };
     ul.menu-list
