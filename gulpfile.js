@@ -13,7 +13,6 @@ let imagemin = require("gulp-imagemin");
 let webp = require("gulp-webp");
 let del = require("del");
 let pug = require("gulp-pug");
-let htmlmin = require("gulp-htmlmin");
 
 gulp.task("css", () => {
     return gulp.src("source/sass/style.scss")
@@ -36,7 +35,6 @@ gulp.task("css", () => {
 gulp.task("html", () => {
   return gulp.src("source/*.pug")
     .pipe(pug())
-    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"))
 });
 
@@ -103,5 +101,6 @@ gulp.task("start", gulp.series(
     "clean",
     "copy",
     "css",
+    "html",
     "server"
 ));
