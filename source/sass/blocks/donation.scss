@@ -6,7 +6,6 @@
   .donation {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding-bottom: 20px;
 
     @supports (display: grid) {
@@ -18,6 +17,7 @@
   .donation__link {
     display: block;
     padding: 7px 10px;
+    margin-right: 20px;
 
     font-size: 14px;
     color: $black;
@@ -39,15 +39,5 @@
   .donation__note {
     font-size: 14px;
     color: $orange;
-  }
-}
-
-@media (min-width: $desktop-width) {
-  .donation {
-    justify-content: flex-start;
-  }
-
-  .donation__link {
-    margin-right: 20px;
   }
 }
