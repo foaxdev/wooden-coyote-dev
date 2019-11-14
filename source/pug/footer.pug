@@ -6,21 +6,6 @@ mixin footer()
         h3.visually-hidden Find me on other platforms
         ul.sources-list
           li.sources-list__item
-            a.sources-list__link(href='itms://music.apple.com/us/artist/wooden-coyote/1441918533') Listen on Apple Music
-              picture
-                source(type='image/webp' srcset='img/apple-music.webp')
-                img.about-me__picture(src='img/apple-music.png' alt='Apple Music logo')
-          li.sources-list__item
-            a.sources-list__link(href='deezer://www.deezer.com/artist/54062772') Listen on Deezer
-              picture
-                source(type='image/webp' srcset='img/deezer.webp')
-                img.about-me__picture(src='img/deezer.png' alt='Deezer logo')
-          li.sources-list__item
-            a.sources-list__link(href='spotify:artist:708W3kU9R6NMpX2MFzpb22') Listen on Spotify
-              picture
-                source(type='image/webp' srcset='img/spotify.webp')
-                img.about-me__picture(src='img/spotify.png' alt='Spotify logo')
-          li.sources-list__item
             a.sources-list__link(href='soundcloud://users:jesse-white-952049199') Listen on SoundCloud
               picture
                 source(type='image/webp' srcset='img/soundcloud.webp')
@@ -30,9 +15,24 @@ mixin footer()
               picture
                 source(type='image/webp' srcset='img/asset-store.webp')
                 img.about-me__picture(src='img/asset-store.png' alt='Asset Store logo')
+          //li.sources-list__item
+          //  a.sources-list__link(href='itms://music.apple.com/us/artist/wooden-coyote/1441918533') Listen on Apple Music
+          //    picture
+          //      source(type='image/webp' srcset='img/apple-music.webp')
+          //      img.about-me__picture(src='img/apple-music.png' alt='Apple Music logo')
+          //li.sources-list__item
+          //  a.sources-list__link(href='deezer://www.deezer.com/artist/54062772') Listen on Deezer
+          //    picture
+          //      source(type='image/webp' srcset='img/deezer.webp')
+          //      img.about-me__picture(src='img/deezer.png' alt='Deezer logo')
+          //li.sources-list__item
+          //  a.sources-list__link(href='spotify:artist:708W3kU9R6NMpX2MFzpb22') Listen on Spotify
+          //    picture
+          //      source(type='image/webp' srcset='img/spotify.webp')
+          //      img.about-me__picture(src='img/spotify.png' alt='Spotify logo')
 
       div.contacts
-        h3.visually-hidden Contact me
+        h3.heading.contacts__header Contact me
         ul.contacts-list
           li.contacts-list__item
             a.contacts-list__link.contacts-list__link--telegram(href='https://web.telegram.org/#/im?p=@foaxdev') Telegram
@@ -48,4 +48,5 @@ mixin footer()
         a.contacts__link(href='mailto:en.morgenstern@gmail.com') en.morgenstern@gmail.com
 
       div.donation
-        //donation
+        a.donation__link(href='#') Support the project
+        span.donation__note Thank you a lot! ♥

@@ -1,0 +1,13 @@
+.sources {
+  @supports (display: grid) {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .sources {
+    @supports (display: grid) {
+      grid-area: 2 / 1 / 4 / 2;
+    }
+  }
+}

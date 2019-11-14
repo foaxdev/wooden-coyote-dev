@@ -1,0 +1,42 @@
+.contacts {
+  @supports (display: grid) {
+    grid-area: 3 / 1 / 6 / 2;
+  }
+}
+
+.contacts__header {
+  color: $orange;
+}
+
+.contacts__link {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: $orange;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $white;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .contacts {
+    margin-top: 20px;
+    @supports (display: grid) {
+      grid-area: 1 / 3 / 4 / 4;
+    }
+  }
+
+  .contacts__header {
+    text-align: right;
+  }
+
+  .contacts__link {
+    justify-content: flex-end;
+  }
+}

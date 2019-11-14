@@ -1,0 +1,18 @@
+.sources-list {
+  @include list-reset();
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.sources-list__link {
+  @include hide-text();
+}
+
+@media (min-width: $tablet-width) {
+  .sources-list {
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 0;
+  }
+}
