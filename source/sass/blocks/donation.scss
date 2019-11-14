@@ -24,6 +24,16 @@
     text-transform: uppercase;
 
     background-color: $orange;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $orange;
+    }
   }
 
   .donation__note {

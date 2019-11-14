@@ -1,9 +1,8 @@
 .menu-list {
   @include list-reset();
-
-  @supports (display: grid) {
-    grid-area: 2 / 1 / 6 / 5;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-list__link {
@@ -14,4 +13,33 @@
   color: $black;
   text-transform: uppercase;
   text-align: center;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $white;
+  }
+
+  &:active {
+    color: $black;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .menu-list {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .menu-list__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .menu-list__link {
+    font-size: 20px;
+  }
 }

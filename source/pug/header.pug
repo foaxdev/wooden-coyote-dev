@@ -1,16 +1,17 @@
 mixin header()
   header.header
-    a.header__logo(href='/')
-      picture
-        source(type='image/webp' media='(min-width: 1200px)' srcset='img/logo-small-desktop.webp')
-        source(type='image/webp' srcset='img/logo-small-mobile.webp')
+    div.header__wrap
+      a.header__logo(href='/')
+        picture
+          source(type='image/webp' media='(min-width: 768px)' srcset='img/logo-small-desktop.webp')
+          source(type='image/webp' srcset='img/logo-small-mobile.webp')
 
-        source(media='(min-width: 1200px)' srcset='img/logo-small-desktop.png')
-        img.header__logo(src='img/logo-small-mobile.png' alt='Logotype Wooden Coyote music')
-      span.header__title Wooden Coyote music
-    button.header__toggle(type='button') Open or close menu
-    - let menu = { 'lister': 'Listen', 'download': 'Download', 'contacts': 'Contacts' };
-    ul.menu-list
-      each menuName, menuId in menu
-        li.menu-list__item
-          a.menu-list__link(href='#' + menuId)= menuName
+          source(media='(min-width: 768px)' srcset='img/logo-small-desktop.png')
+          img.header__image(src='img/logo-small-mobile.png' alt='Logotype Wooden Coyote music')
+        span.header__title Wooden Coyote music
+      button.header__toggle(type='button') Open or close menu
+      - let menu = { 'listen': 'Listen', 'download': 'Download', 'contacts': 'Contacts' };
+      ul.menu-list
+        each menuName, menuId in menu
+          li.menu-list__item
+            a.menu-list__link(href='#' + menuId)= menuName
