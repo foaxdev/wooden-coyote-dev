@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-color: $orange;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+}
+
+.header__logo {
+  @supports (display: grid) {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+}
+
+.header__title {
+  font-size: 16px;
+  color: $black;
+  font-weight: 700;
+}
+
+.header__toggle {
+  @include hide-text();
+  display: none;
+
+  background-color: transparent;
+  background-image: url("../img/menu-open.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  border: none;
+
+  @supports (display: grid) {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+
+  &--open,
+  &--close {
+    display: block;
+  }
+}

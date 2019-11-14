@@ -1,0 +1,58 @@
+.download {
+  width: 100%;
+}
+
+.download__wrap {
+  padding: 0 20px;
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+    align-items: end;
+  }
+}
+
+.download__header {
+  @supports (display: grid) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
+
+.download__list {
+  @supports (display: grid) {
+    grid-area: 2 / 1 / 10 / 2;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .download__wrap {
+    padding: 0 30px;
+    @supports (display: grid) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(10, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 30px;
+    }
+  }
+
+  .download__header {
+    @supports (display: grid) {
+      grid-area: 1 / 1 / 4 / 2;
+    }
+  }
+
+  .download__list {
+    @supports (display: grid) {
+      grid-area: 4 / 1 / 11 / 2;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .download__wrap {
+    margin: 0 auto;
+    width: 1280px;
+  }
+}

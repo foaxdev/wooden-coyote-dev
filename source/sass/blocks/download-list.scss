@@ -1,0 +1,58 @@
+.download-list {
+  @include list-reset();
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+  }
+}
+
+.download-list__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-list__picture {
+  display: block;
+  width: 100%;
+}
+
+.download-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+
+  background-color: $orange;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $black;
+    color: $orange;
+  }
+
+  &:active {
+    color: $white;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .download-list {
+    @supports (display: grid) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 0;
+    }
+  }
+}

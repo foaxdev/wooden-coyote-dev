@@ -8,8 +8,9 @@ mixin header()
         source(media='(min-width: 1200px)' srcset='img/logo-small-desktop.png')
         img.header__logo(src='img/logo-small-mobile.png' alt='Logotype Wooden Coyote music')
       span.header__title Wooden Coyote music
-    - let menu = { 'about-me': 'About me', 'lister': 'Listen', 'download': 'Download', 'contacts': 'Contacts' };
+    button.header__toggle(type='button') Open or close menu
+    - let menu = { 'lister': 'Listen', 'download': 'Download', 'contacts': 'Contacts' };
     ul.menu-list
       each menuName, menuId in menu
-        li.menu-list__item= menuName
-          a.menu-list__link(href='#' + menuId)
+        li.menu-list__item
+          a.menu-list__link(href='#' + menuId)= menuName

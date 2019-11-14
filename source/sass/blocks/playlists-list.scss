@@ -1,0 +1,42 @@
+.playlists-list {
+  @include list-reset();
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+  }
+}
+
+.playlists-list__iframe {
+  width: 100%;
+  min-height: 410px;
+}
+
+@media (min-width: $tablet-width) {
+  .playlists-list {
+    @supports (display: grid) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .playlists-list {
+    @supports (display: grid) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 0;
+    }
+  }
+
+  .playlists-list__iframe {
+    min-height: 500px;
+  }
+}
