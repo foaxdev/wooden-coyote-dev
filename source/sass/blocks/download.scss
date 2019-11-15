@@ -18,6 +18,8 @@
 }
 
 .download__header {
+  position: relative;
+
   max-width: 250px;
   align-self: center;
   justify-self: center;
@@ -26,6 +28,20 @@
     grid-area: 1 / 1 / 2 / 2;
     align-self: center;
   }
+}
+
+.download__note {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+
+  width: 300px;
+  margin-left: -150px;
+
+  font-size: 10px;
+  color: #000;
+  text-transform: lowercase;
+  font-weight: 400;
 }
 
 .download__list {
@@ -58,6 +74,13 @@
     @supports (display: grid) {
       grid-area: 4 / 1 / 11 / 2;
     }
+  }
+
+  .download__note {
+    width: 500px;
+    margin-left: -250px;
+
+    font-size: 12px;
   }
 }
 

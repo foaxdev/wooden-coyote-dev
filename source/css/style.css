@@ -704,6 +704,7 @@ input[type="radio"].visually-hidden {
               align-items: end; } }
 
 .download__header {
+  position: relative;
   max-width: 250px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -712,6 +713,17 @@ input[type="radio"].visually-hidden {
     .download__header {
       grid-area: 1 / 1 / 2 / 2;
       align-self: center; } }
+
+.download__note {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  font-size: 10px;
+  color: #000;
+  text-transform: lowercase;
+  font-weight: 400; }
 
 @supports (display: grid) {
   .download__list {
@@ -733,7 +745,11 @@ input[type="radio"].visually-hidden {
         grid-area: 1 / 1 / 4 / 2; } }
   @supports (display: grid) {
     .download__list {
-      grid-area: 4 / 1 / 11 / 2; } } }
+      grid-area: 4 / 1 / 11 / 2; } }
+  .download__note {
+    width: 500px;
+    margin-left: -250px;
+    font-size: 12px; } }
 
 @media (min-width: 1300px) {
   .download__wrap {
