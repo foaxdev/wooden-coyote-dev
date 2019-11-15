@@ -699,9 +699,15 @@ input[type="radio"].visually-hidden {
           -ms-flex-align: end;
               align-items: end; } }
 
-@supports (display: grid) {
-  .download__header {
-    grid-area: 1 / 1 / 2 / 2; } }
+.download__header {
+  max-width: 250px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center; }
+  @supports (display: grid) {
+    .download__header {
+      grid-area: 1 / 1 / 2 / 2;
+      align-self: center; } }
 
 @supports (display: grid) {
   .download__list {

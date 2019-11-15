@@ -18,8 +18,13 @@
 }
 
 .download__header {
+  max-width: 250px;
+  align-self: center;
+  justify-self: center;
+
   @supports (display: grid) {
     grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
   }
 }
 
@@ -32,6 +37,7 @@
 @media (min-width: $tablet-width) {
   .download__wrap {
     padding: 0 30px;
+
     @supports (display: grid) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(10, 1fr);
