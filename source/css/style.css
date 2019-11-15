@@ -722,9 +722,11 @@ input[type="radio"].visually-hidden {
         grid-template-rows: repeat(10, 1fr);
         grid-column-gap: 0;
         grid-row-gap: 30px; } }
-  @supports (display: grid) {
-    .download__header {
-      grid-area: 1 / 1 / 4 / 2; } }
+  .download__header {
+    max-width: 100%; }
+    @supports (display: grid) {
+      .download__header {
+        grid-area: 1 / 1 / 4 / 2; } }
   @supports (display: grid) {
     .download__list {
       grid-area: 4 / 1 / 11 / 2; } } }

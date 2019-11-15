@@ -47,6 +47,8 @@
   }
 
   .download__header {
+    max-width: 100%;
+
     @supports (display: grid) {
       grid-area: 1 / 1 / 4 / 2;
     }
