@@ -68,11 +68,19 @@
   .header__toggle--close {
     display: none;
   }
+
+  .header__title {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: $desktop-width) {
   .header__wrap {
     margin: 0 auto;
     width: 1280px;
+  }
+
+  .header__title {
+    font-size: 24px;
   }
 }

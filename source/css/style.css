@@ -491,12 +491,16 @@ input[type="radio"].visually-hidden {
   .header__toggle,
   .header__toggle--open,
   .header__toggle--close {
-    display: none; } }
+    display: none; }
+  .header__title {
+    font-size: 20px; } }
 
 @media (min-width: 1300px) {
   .header__wrap {
     margin: 0 auto;
-    width: 1280px; } }
+    width: 1280px; }
+  .header__title {
+    font-size: 24px; } }
 
 .menu-list {
   margin: 0;
