@@ -19,7 +19,11 @@
 
 @media (min-width: $tablet-width) {
   .footer__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     padding: 0 30px;
+
     @supports (display: grid) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

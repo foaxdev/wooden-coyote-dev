@@ -6,8 +6,12 @@
 
 @media (min-width: $tablet-width) {
   .sources {
+    order: 1;
+    margin-right: auto;
+
     @supports (display: grid) {
       grid-area: 2 / 1 / 4 / 2;
+      margin-right: 0;
     }
   }
 }

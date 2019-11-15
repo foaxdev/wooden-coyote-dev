@@ -26,9 +26,13 @@
 
 @media (min-width: $tablet-width) {
   .contacts {
+    order: 3;
     margin-top: 20px;
+    margin-left: auto;
+
     @supports (display: grid) {
       grid-area: 1 / 3 / 4 / 4;
+      margin-left: 0;
     }
   }
 

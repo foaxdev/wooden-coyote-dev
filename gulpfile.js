@@ -1,18 +1,20 @@
 "use strict";
 
-let gulp = require("gulp");
-let plumber = require("gulp-plumber");
-let sourcemap = require("gulp-sourcemaps");
-let rename = require("gulp-rename");
-let sass = require("gulp-sass");
-let postcss = require("gulp-postcss");
-let autoprefixer = require("autoprefixer");
-let csso = require("gulp-csso");
-let server = require("browser-sync").create();
-let imagemin = require("gulp-imagemin");
-let webp = require("gulp-webp");
-let del = require("del");
-let pug = require("gulp-pug");
+const gulp = require("gulp");
+const plumber = require("gulp-plumber");
+const sourcemap = require("gulp-sourcemaps");
+const rename = require("gulp-rename");
+const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const csso = require("gulp-csso");
+const server = require("browser-sync").create();
+const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const del = require("del");
+const pug = require("gulp-pug");
+const babel = require('gulp-babel');
+const terser = require("gulp-terser");
 
 gulp.task("css", () => {
     return gulp.src("source/sass/style.scss")
@@ -38,6 +40,19 @@ gulp.task("html", () => {
     .pipe(gulp.dest("build"))
 });
 
+gulp.task("js", () => {
+  return gulp.src("source/js/*.js")
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(sourcemap.init())
+    .pipe(terser())
+    .pipe(rename("script.min.js"))
+    .pipe(sourcemap.write("."))
+    .pipe(gulp.dest('build/js'))
+    .pipe(server.stream());
+});
+
 gulp.task("server", () => {
     server.init({
         server: "build/",
@@ -48,7 +63,7 @@ gulp.task("server", () => {
     });
 
     gulp.watch("source/sass/**/*.scss", gulp.series("css"));
-    gulp.watch("source/js/*.js", gulp.series("copy", "refresh"));
+    gulp.watch("source/js/*.js", gulp.series("js", "copy", "refresh"));
     gulp.watch("source/**/*.pug", gulp.series("html", "refresh"));
 });
 
@@ -101,6 +116,7 @@ gulp.task("start", gulp.series(
     "clean",
     "copy",
     "css",
+    "js",
     "html",
     "server"
 ));

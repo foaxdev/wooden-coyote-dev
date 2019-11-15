@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 20px;
+    order: 2;
 
     @supports (display: grid) {
       grid-area: 2 / 2 / 4 / 3;
