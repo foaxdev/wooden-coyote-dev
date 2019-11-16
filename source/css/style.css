@@ -1023,6 +1023,7 @@ input[type="radio"].visually-hidden {
         align-self: end; } }
   .donation__button {
     margin-bottom: 10px;
+    overflow: hidden;
     border: none; }
   .donation__note {
     font-size: 14px;
