@@ -1006,6 +1006,10 @@ input[type="radio"].visually-hidden {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1017,19 +1021,9 @@ input[type="radio"].visually-hidden {
       .donation {
         grid-area: 2 / 2 / 4 / 3;
         align-self: end; } }
-  .donation__link {
-    display: block;
-    padding: 7px 10px;
-    margin-right: 20px;
-    font-size: 14px;
-    color: #000000;
-    text-transform: uppercase;
-    background-color: #ff9900; }
-    .donation__link:hover, .donation__link:focus {
-      outline: none;
-      background-color: #FFFFFF; }
-    .donation__link:active {
-      color: #ff9900; }
+  .donation__button {
+    margin-bottom: 10px;
+    border: none; }
   .donation__note {
     font-size: 14px;
     color: #ff9900; } }
