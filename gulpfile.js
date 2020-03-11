@@ -24,8 +24,6 @@ gulp.task("css", () => {
         .pipe(postcss([
             autoprefixer()
         ]))
-        .pipe(gulp.dest("source/css"))
-        .pipe(gulp.dest("build/css"))
         .pipe(csso())
         .pipe(rename("style.min.css"))
         .pipe(sourcemap.write("."))
