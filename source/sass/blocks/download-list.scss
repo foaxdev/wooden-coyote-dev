@@ -18,10 +18,6 @@
   &:last-child {
     margin-bottom: 0;
   }
-
-  @supports (display: grid) {
-    margin-bottom: 0;
-  }
 }
 
 .download-list__picture {
